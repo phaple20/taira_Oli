@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee</title>
+    <script src="../../js/jquery-1.7.2.js"></script>
+</head>
+<body>
+<input id="phone" value="15026900057" class="login_input code_input" type="text" placeholder="请输入验证码" maxlength="11" oninput="value=value.replace(/[^\d]/g,'')">
+<input id="verifyCode" value="code" class="login_input code_input" type="text" placeholder="请输入验证码" maxlength="6" oninput="value=value.replace(/[^\d]/g,'')">
+<button class="sendCode">vetify code</button>
+
+<script>
+    $('.sendCode').click(function () {
+        var data = {
+            mobile: $('#phone').val(),
+            isMock: true
+        };
+        $.ajax({
+            url: "/employee/getCode",
+            contentType: 'application/json;charset=utf-8',
+            data: data,
+            type: 'get',
+            async: false,
+            dataType: 'json',
+            success: function (res) {
+                console.log(res);
+            },
+            error: function (e) {
+                console.log(e);
+            }
+        })
+    })
+</script>
+</body>
+</html>
