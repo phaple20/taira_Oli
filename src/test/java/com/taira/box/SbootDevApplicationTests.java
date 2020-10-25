@@ -83,40 +83,40 @@ class SbootDevApplicationTests {
 	}
 
 	//test mybatis
-	@Autowired
+	//@Autowired
 	private UserMapper userMapper;
 	@Test
 	public void testMybatis() {
-		List<User> users = userMapper.selectList(null);
-		for (int i = 0; i < users.size(); i++) {
-			System.out.println(users.get(i));
-		}
+//		List<User> users = userMapper.selectList(null);
+//		for (int i = 0; i < users.size(); i++) {
+//			System.out.println(users.get(i));
+//		}
 	}
 	//添加用户
 	@Test
 	public void testAddUser() {
-		User user = new User();
-		user.setName("Lucy");
-		user.setAge(12);
-		user.setEmail("lucy@hotmail.com");
-		int rows = userMapper.insert(user);
-		System.out.println(rows);
+//		User user = new User();
+//		user.setName("Lucy");
+//		user.setAge(12);
+//		user.setEmail("lucy@hotmail.com");
+//		int rows = userMapper.insert(user);
+//		System.out.println(rows);
 	}
 	//修改用户
 	@Test
 	public void testUpdateUser() {
-		User user = new User();
-		user.setId("1319923913421021186");
-		user.setName("Luci");
-		int rows = userMapper.updateById(user);
-		System.out.println(rows);
+//		User user = new User();
+//		user.setId("1319923913421021186");
+//		user.setName("Luci");
+//		int rows = userMapper.updateById(user);
+//		System.out.println(rows);
 	}
 	//测试乐观锁
 	@Test
 	public void testLGS() {
-		User user = userMapper.selectById("1319923913421021186");
-		user.setName("Orange");
-		int i = userMapper.updateById(user);
-		System.out.println(i);
+//		User user = userMapper.selectById("1319923913421021186");
+//		user.setName("Orange");
+//		int i = userMapper.updateById(user);
+//		System.out.println(i);
 	}
 }
